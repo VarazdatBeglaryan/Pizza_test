@@ -1,0 +1,110 @@
+<header class="header">
+    <span class="container">
+      <span class="logo_conatainer">
+        <img class="pizza_logo" src="../assets/pizza-header.png">
+        <img src="../assets/logo_heaeder.png">
+      </span>
+  
+      <span class="navigation">
+        <a href="#">Пиццы</a>
+        <a href="#">Напитки</a>
+        <a href="#">Доставка и оплата</a>
+        <a href="#">Контакты</a>
+      </span>
+    </span>
+  </header>
+  
+  <div class="content container">
+    <div class="content_up">
+      <div class="left">
+        <p class="title_up">Самая вкусная пицца в мире</p>
+        <p class="title_down">только в Pizza Cheff </p>
+        <div class="left_block_top">
+          <div>
+            <div class="left_block_container">
+              <img src="../assets/hop.svg">
+              <div>
+                <div class="left_block_title">
+                  Лучшее тесто
+                </div>
+                <div class="left_block_desc">
+                  Мы создаем тесто только из отборной итальянской муки наивысшег
+                </div>
+              </div>
+            </div>
+  
+            <div class="left_block_container">
+              <img src="../assets/seo-and-web.svg">
+              <div>
+                <div class="left_block_title">
+                  Лучшее тесто
+                </div>
+                <div class="left_block_desc">
+                  Мы создаем тесто только из отборной итальянской муки наивысшег
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="left_block_container second_block">
+              <img src="../assets/kitchen-pack.svg">
+              <div>
+                <div class="left_block_title">
+                  Лучшее тесто
+                </div>
+                <div class="left_block_desc">
+                  Мы создаем тесто только из отборной итальянской муки наивысшег
+                </div>
+              </div>
+            </div>
+  
+            <div class="left_block_container">
+              <img src="../assets/holidays.svg">
+              <div>
+                <div class="left_block_title">
+                  Лучшее тесто
+                </div>
+                <div class="left_block_desc">
+                  Мы создаем тесто только из отборной итальянской муки наивысшег
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="button_primary">
+          Выбрать пиццу
+        </button>
+      </div>
+      <div class="right">
+        <img src="../assets/pizza_big.png">
+      </div>
+    </div>
+  
+    <div class="content_down">
+      <h1>Выберите свою любимую пиццу </h1>
+      <div class="content_down_container">
+        <div class="content_down_card" *ngFor="let pizza of pizzasList">
+          <img (click)='openDialog(pizza)' [src]="pizza.src">
+          <h3>{{pizza.title}}</h3>
+          <p>{{pizza.desc}}</p>
+          <button class="button_primary">В корзину</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="container">
+    <div class="footer_left">
+      <h1>Хватит думать! <br> <span>Доставим заказ за 30 минут!</span></h1>
+      <p>Мы  гарантированно доставим вашу пиццу за 30 минут с момента оформления заказа. Если мы опоздаем даже на 1 минуту - вы получаете весь заказ бесплатно и ваучер на скидку на следующий заказ. Мы гордимся нашим сервисом и сделаем всё, чтобы наш клиент был доволен и не остался голодный!</p>
+    </div>
+    <div class="footer_mid">
+      <form [formGroup]="deliveryForm">
+        <input formControlName="name" placeholder="Ваше имя" class="name">
+        <input formControlName="address" placeholder="Адрес доставки" class="address">
+        <input formControlName="phone" placeholder="Телефон" class="phone">
+        <button [disabled]="buttonDisabled" (click)="submitForm()" class="button_primary">Оформить заказ</button>
+      </form>
+    </div>
+    <img class="fotter_right" src="../assets/Group 2.png">
+  </footer>
